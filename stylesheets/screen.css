@@ -85,24 +85,39 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   right: 0;
   background-size: cover;
   background-repeat: no-repeat;
+  /** AUTO **/
+  /** AUTOEND **/
 }
 /* line 10, ../sass/components/_wall.scss */
 .wall:hover {
   opacity: 0.9;
   cursor: pointer;
 }
-/* line 15, ../sass/components/_wall.scss */
-.wall.wall--wallpaper1 {
-  background-image: url(/images/walls/wallpaper1.jpg);
-}
-/* line 19, ../sass/components/_wall.scss */
+/* line 16, ../sass/components/_wall.scss */
 .wall.wall--brick1 {
-  background-image: url(/images/walls/brick1.jpg);
+  background-image: url("/images/wall/brick1.jpg");
+}
+/* line 20, ../sass/components/_wall.scss */
+.wall.wall--brick2 {
+  background-image: url("/images/wall/brick2.jpg");
+}
+/* line 24, ../sass/components/_wall.scss */
+.wall.wall--wallpaper1 {
+  background-image: url("/images/wall/wallpaper1.jpg");
+}
+/* line 28, ../sass/components/_wall.scss */
+.wall.wall--wallpaper2 {
+  background-image: url("/images/wall/wallpaper2.jpg");
+}
+/* line 32, ../sass/components/_wall.scss */
+.wall.wall--wallpaper3 {
+  background-image: url("/images/wall/wallpaper3.jpg");
 }
 
 /* line 1, ../sass/components/_couch.scss */
 .couch {
   position: absolute;
+  left: 17%;
   bottom: 0;
   height: 300px;
   width: 600px;
@@ -111,18 +126,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   /** AUTO **/
   /** AUTOEND **/
 }
-/* line 9, ../sass/components/_couch.scss */
+/* line 10, ../sass/components/_couch.scss */
 .couch:hover {
   opacity: 0.9;
   cursor: pointer;
 }
-/* line 14, ../sass/components/_couch.scss */
-.couch.couch--left {
-  left: 0;
+/* line 16, ../sass/components/_couch.scss */
+.couch.couch--couch1 {
+  background-image: url("/images/couch/couch1.png");
 }
-/* line 18, ../sass/components/_couch.scss */
-.couch.couch--center {
-  left: 17%;
+/* line 20, ../sass/components/_couch.scss */
+.couch.couch--couch2 {
+  background-image: url("/images/couch/couch2.png");
+}
+/* line 24, ../sass/components/_couch.scss */
+.couch.couch--couch3 {
+  background-image: url("/images/couch/couch3.png");
+}
+/* line 28, ../sass/components/_couch.scss */
+.couch.couch--couch4 {
+  background-image: url("/images/couch/couch4.png");
 }
 
 /* line 1, ../sass/components/_floor.scss */
@@ -134,15 +157,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   top: 500px;
   background-size: cover;
   background-repeat: no-repeat;
+  /** AUTO **/
+  /** AUTOEND **/
 }
 /* line 10, ../sass/components/_floor.scss */
 .floor:hover {
   opacity: 0.9;
   cursor: pointer;
 }
-/* line 15, ../sass/components/_floor.scss */
+/* line 16, ../sass/components/_floor.scss */
 .floor.floor--wooden1 {
-  background-image: url(/images/floor/wooden1.jpg);
+  background-image: url("/images/floor/wooden1.jpg");
 }
 
 /* line 1, ../sass/components/_modal.scss */
@@ -156,10 +181,32 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   z-index: 9999;
   display: none;
   box-shadow: 0 0 10px #000;
+  overflow: auto;
 }
-/* line 12, ../sass/components/_modal.scss */
+/* line 13, ../sass/components/_modal.scss */
 .modal.modal--show {
   display: block;
+}
+/* line 17, ../sass/components/_modal.scss */
+.modal .modal--choices {
+  margin: 10px;
+}
+/* line 20, ../sass/components/_modal.scss */
+.modal .modal--choices li {
+  display: inline-block;
+  width: 50%;
+}
+/* line 24, ../sass/components/_modal.scss */
+.modal .modal--choices li a {
+  display: block;
+}
+/* line 28, ../sass/components/_modal.scss */
+.modal .modal--choices li img {
+  max-width: 100%;
+}
+/* line 31, ../sass/components/_modal.scss */
+.modal .modal--choices li img:hover {
+  opacity: 0.9;
 }
 
 /* line 12, ../sass/screen.scss */

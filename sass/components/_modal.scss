@@ -8,8 +8,30 @@
   z-index: 9999;
   display: none;
   box-shadow: 0 0 10px #000;
+  overflow: auto;
 
   &.modal--show {
     display: block;
+  }
+
+  .modal--choices {
+    margin: 10px;
+
+    li {
+      display: inline-block;
+      width: 50%;
+
+      a {
+        display: block;
+      }
+
+      img {
+        max-width: 100%;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
   }
 }

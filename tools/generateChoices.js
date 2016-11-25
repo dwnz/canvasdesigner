@@ -2,6 +2,13 @@ const fs = require('fs');
 const path = require('path');
 
 const async = require('async');
+const choicePath = path.join(__dirname, '../', 'js', 'choices.js');
+
+if (fs.existsSync(path.join(choicePath))) {
+    fs.unlinkSync(choicePath);
+}
+
+fs.appendFileSync(choicePath, 'var choices = {};\r\n');
 
 fs.readdir(path.join(__dirname, '../', 'images'), function (err, items) {
     async.each(items, function (item, next) {
@@ -9,12 +16,7 @@ fs.readdir(path.join(__dirname, '../', 'images'), function (err, items) {
                 return next(null);
             }
 
-            if (item === "couch") {
-                BuildData(item, next);
-            }
-            else {
-                next(null);
-            }
+            BuildData(item, next);
         },
         function () {
             console.log("Done!");
@@ -23,7 +25,7 @@ fs.readdir(path.join(__dirname, '../', 'images'), function (err, items) {
 });
 
 function BuildData(folder, callback) {
-    var js = 'choices.' + folder + '= {};';
+    var js = 'choices.' + folder + ' = {};\r\n\r\n';
     var css = '';
 
     fs.readdir(path.join(__dirname, '../', 'images', folder), function (err, items) {
@@ -32,10 +34,10 @@ function BuildData(folder, callback) {
             function (item, next) {
                 var name = item.substring(0, item.length - 4);
 
-                js += 'choices.' + folder + '["' + name + '"] = {';
-                js += ' css: "' + folder + ' ' + folder + '--' + name + '",';
-                js += ' thumb: "/images/' + folder + '/' + item + '"';
-                js += '};';
+                js += 'choices.' + folder + '["' + name + '"] = {\r\n';
+                js += ' css: "' + folder + '--' + name + '",\r\n';
+                js += ' thumb: "/images/' + folder + '/' + item + '"\r\n';
+                js += '};\r\n\r\n';
 
                 css += '&.' + folder + '--' + name + '{\r\n';
                 css += ' background-image: url("/images/' + folder + '/' + item + '")\r\n';
@@ -59,6 +61,9 @@ function BuildData(folder, callback) {
                         },
                         function WriteSCSS(content, next) {
                             fs.writeFile(path.join(__dirname, '../', 'sass', 'components', '_' + folder + '.scss'), content, next);
+                        },
+                        function WriteJS(next) {
+                            fs.appendFile(choicePath, '\r\n' + js, next);
                         }
                     ],
                     function () {

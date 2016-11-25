@@ -12,11 +12,27 @@
     cursor: pointer;
   }
 
-  &.wall--wallpaper1 {
-    background-image: url(/images/walls/wallpaper1.jpg);
-  }
+  /** AUTO **/
+&.wall--brick1{
+ background-image: url("/images/wall/brick1.jpg")
+}
 
-  &.wall--brick1 {
-    background-image: url(/images/walls/brick1.jpg);
-  }
+&.wall--brick2{
+ background-image: url("/images/wall/brick2.jpg")
+}
+
+&.wall--wallpaper1{
+ background-image: url("/images/wall/wallpaper1.jpg")
+}
+
+&.wall--wallpaper2{
+ background-image: url("/images/wall/wallpaper2.jpg")
+}
+
+&.wall--wallpaper3{
+ background-image: url("/images/wall/wallpaper3.jpg")
+}
+
+/** AUTOEND **/
+
 }

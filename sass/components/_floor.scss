@@ -12,7 +12,10 @@
     cursor: pointer;
   }
 
-  &.floor--wooden1 {
-    background-image: url(/images/floor/wooden1.jpg);
-  }
+  /** AUTO **/
+&.floor--wooden1{
+ background-image: url("/images/floor/wooden1.jpg")
+}
+
+/** AUTOEND **/
 }

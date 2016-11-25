@@ -1,5 +1,6 @@
 .couch {
   position: absolute;
+  left: 17%;
   bottom: 0;
   height: 300px;
   width: 600px;
@@ -11,14 +12,22 @@
     cursor: pointer;
   }
 
-  &.couch--left {
-    left: 0;
-  }
-
-  &.couch--center {
-    left: 17%;
-  }
-
   /** AUTO **/
+  &.couch--couch1 {
+    background-image: url("/images/couch/couch1.png")
+  }
+
+  &.couch--couch2 {
+    background-image: url("/images/couch/couch2.png")
+  }
+
+  &.couch--couch3 {
+    background-image: url("/images/couch/couch3.png")
+  }
+
+  &.couch--couch4 {
+    background-image: url("/images/couch/couch4.png")
+  }
+
   /** AUTOEND **/
 }

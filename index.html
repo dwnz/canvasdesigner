@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Canvas Designer</title>
 
+    <script src="/js/choices.js"></script>
     <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
@@ -20,39 +21,85 @@
     <div class="couch couch--center couch--couch1"></div>
 
     <div class="modal">
-        <ul></ul>
+        <ul class="modal--choices"></ul>
     </div>
 </div>
 
-
 <script>
-    function FloorPicker() {
+    function Picker(type, title) {
         var self = this;
-        self.element = $('.floor');
 
-        self.choices = [
-            {
-                css: 'floor--wooden1',
-                thumb: ''
-            },
-            'floor--wooden2',
-            'floor--wooden3'
-        ];
+        self.type = type;
+        self.title = 'Pick: ' + title;
+        self.modal = $('.modal');
+        self.element = $('.' + type);
 
         self.init = function () {
             self.element.click(self.showOptions);
         };
 
         self.showOptions = function () {
-            $('.modal').addClass('modal--show');
+            self.modal.addClass('modal--show');
+
+            $('body').keydown(function (event) {
+                if (event.keyCode === 27) {
+                    self.hide();
+                }
+            });
+
+            var choicesList = $('.modal--choices')[0];
+            var items = choices[self.type];
+            var elements = [];
+
+            function AddItem(item) {
+                var listItem = document.createElement('li');
+
+                var linkElement = document.createElement('a');
+                linkElement.setAttribute('data-item', item);
+                linkElement.setAttribute('href', 'javascript:');
+                linkElement.onclick = function () {
+                    self.pick(item);
+                };
+                linkElement.cancelBubble = true;
+
+                var thumbElement = document.createElement('img');
+                thumbElement.setAttribute('src', items[item].thumb);
+                linkElement.appendChild(thumbElement);
+
+                listItem.appendChild(linkElement);
+
+                elements.push(listItem);
+                choicesList.appendChild(listItem);
+            }
+
+            for (var item in items) {
+                AddItem(item);
+            }
+        };
+
+        self.pick = function (item) {
+            $('.' + self.type).attr('class', self.type + ' ' + self.type + '--' + item + ' couch--center');
+            self.hide();
+        };
+
+        self.hide = function () {
+            self.modal.removeClass('modal--show');
+            $('.modal--choices').html('');
         };
     }
 
     var app = {};
 
     $(function () {
-        app.floorPicker = new FloorPicker();
-        app.floorPicker.init();
+        app.pickers = [];
+
+        app.pickers.push(new Picker('couch'));
+        app.pickers.push(new Picker('floor'));
+        app.pickers.push(new Picker('wall'));
+
+        for (var i = 0; i < app.pickers.length; i++) {
+            app.pickers[i].init();
+        }
     })
 </script>
 
