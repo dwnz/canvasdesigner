@@ -1,0 +1,18 @@
+.floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+
+  &.floor--wooden1 {
+    background-image: url(/images/floor/wooden1.jpg);
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Designer</title>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css"/>
+    <!--[if IE]>
+    <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+</head>
+<body>
+
+<div class="room">
+    <div class="wall wall--brick1"></div>
+    <div class="floor floor--wooden1"></div>
+    <div class="couch couch--center couch--couch1"></div>
+
+    <div class="modal">
+        <ul></ul>
+    </div>
+</div>
+
+
+<script>
+    function FloorPicker() {
+        var self = this;
+        self.element = $('.floor');
+
+        self.choices = [
+            {
+                css: 'floor--wooden1',
+                thumb: ''
+            },
+            'floor--wooden2',
+            'floor--wooden3'
+        ];
+
+        self.init = function () {
+            self.element.click(self.showOptions);
+        };
+
+        self.showOptions = function () {
+            $('.modal').addClass('modal--show');
+        };
+    }
+
+    var app = {};
+
+    $(function () {
+        app.floorPicker = new FloorPicker();
+        app.floorPicker.init();
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, ../sass/components/_room.scss */
+.room {
+  width: 1000px;
+  height: 600px;
+  position: relative;
+  margin: 20px auto;
+  background: white;
+}
+
+/* line 1, ../sass/components/_wall.scss */
+.wall {
+  position: absolute;
+  top: 0;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 10, ../sass/components/_wall.scss */
+.wall:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+/* line 15, ../sass/components/_wall.scss */
+.wall.wall--wallpaper1 {
+  background-image: url(/images/walls/wallpaper1.jpg);
+}
+/* line 19, ../sass/components/_wall.scss */
+.wall.wall--brick1 {
+  background-image: url(/images/walls/brick1.jpg);
+}
+
+/* line 1, ../sass/components/_couch.scss */
+.couch {
+  position: absolute;
+  bottom: 0;
+  height: 300px;
+  width: 600px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /** AUTO **/
+  /** AUTOEND **/
+}
+/* line 9, ../sass/components/_couch.scss */
+.couch:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+/* line 14, ../sass/components/_couch.scss */
+.couch.couch--left {
+  left: 0;
+}
+/* line 18, ../sass/components/_couch.scss */
+.couch.couch--center {
+  left: 17%;
+}
+
+/* line 1, ../sass/components/_floor.scss */
+.floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 10, ../sass/components/_floor.scss */
+.floor:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+/* line 15, ../sass/components/_floor.scss */
+.floor.floor--wooden1 {
+  background-image: url(/images/floor/wooden1.jpg);
+}
+
+/* line 1, ../sass/components/_modal.scss */
+.modal {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  z-index: 9999;
+  display: none;
+  box-shadow: 0 0 10px #000;
+}
+/* line 12, ../sass/components/_modal.scss */
+.modal.modal--show {
+  display: block;
+}
+
+/* line 12, ../sass/screen.scss */
+body {
+  background: black;
+}

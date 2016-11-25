@@ -1,0 +1,22 @@
+.wall {
+  position: absolute;
+  top: 0;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+
+  &.wall--wallpaper1 {
+    background-image: url(/images/walls/wallpaper1.jpg);
+  }
+
+  &.wall--brick1 {
+    background-image: url(/images/walls/brick1.jpg);
+  }
+}

@@ -1,0 +1,24 @@
+.couch {
+  position: absolute;
+  bottom: 0;
+  height: 300px;
+  width: 600px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+
+  &.couch--left {
+    left: 0;
+  }
+
+  &.couch--center {
+    left: 17%;
+  }
+
+  /** AUTO **/
+  /** AUTOEND **/
+}
